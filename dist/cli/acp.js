@@ -15,6 +15,7 @@ const agent_js_1 = require("./commands/agent.js");
 const task_js_1 = require("./commands/task.js");
 const project_js_1 = require("./commands/project.js");
 const status_js_1 = require("./commands/status.js");
+const github_js_1 = require("./commands/github.js");
 const program = new commander_1.Command();
 program
     .name('acp')
@@ -53,6 +54,13 @@ program
     .addCommand(task_js_1.taskCommands.create)
     .addCommand(task_js_1.taskCommands.assign)
     .addCommand(task_js_1.taskCommands.show);
+// GitHub integration
+program
+    .command('github')
+    .description('GitHub integration')
+    .addCommand(github_js_1.githubCommands.setup)
+    .addCommand(github_js_1.githubCommands.status)
+    .addCommand(github_js_1.githubCommands.sync);
 // Project management
 program
     .command('init')

@@ -11,6 +11,7 @@ import { agentCommands } from './commands/agent.js';
 import { taskCommands } from './commands/task.js';
 import { projectCommands } from './commands/project.js';
 import { statusCommand } from './commands/status.js';
+import { githubCommands } from './commands/github.js';
 
 const program = new Command();
 
@@ -54,6 +55,14 @@ program
   .addCommand(taskCommands.create)
   .addCommand(taskCommands.assign)
   .addCommand(taskCommands.show);
+
+// GitHub integration
+program
+  .command('github')
+  .description('GitHub integration')
+  .addCommand(githubCommands.setup)
+  .addCommand(githubCommands.status)
+  .addCommand(githubCommands.sync);
 
 // Project management
 program
