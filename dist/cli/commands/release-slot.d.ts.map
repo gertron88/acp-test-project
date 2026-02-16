@@ -1,0 +1,1 @@
+{"version":3,"file":"release-slot.d.ts","sourceRoot":"","sources":["../../../src/cli/commands/release-slot.ts"],"names":[],"mappings":"AAAA,UAAU,kBAAkB;IAC1B,WAAW,EAAE,MAAM,CAAC;IACpB,MAAM,EAAE,MAAM,CAAC;CAChB;AAED,wBAAsB,WAAW,CAAC,OAAO,EAAE,kBAAkB,GAAG,OAAO,CAAC,IAAI,CAAC,CAG5E"}
