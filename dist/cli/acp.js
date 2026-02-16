@@ -16,6 +16,7 @@ const task_js_1 = require("./commands/task.js");
 const project_js_1 = require("./commands/project.js");
 const status_js_1 = require("./commands/status.js");
 const github_js_1 = require("./commands/github.js");
+const codex_js_1 = require("./commands/codex.js");
 const program = new commander_1.Command();
 program
     .name('acp')
@@ -61,6 +62,14 @@ program
     .addCommand(github_js_1.githubCommands.setup)
     .addCommand(github_js_1.githubCommands.status)
     .addCommand(github_js_1.githubCommands.sync);
+// Kimi Code (Codex) integration
+program
+    .command('codex')
+    .alias('kimi-code')
+    .description('Kimi Code (Codex) integration - use your 3x credits')
+    .addCommand(codex_js_1.codexCommands.generate)
+    .addCommand(codex_js_1.codexCommands.review)
+    .addCommand(codex_js_1.codexCommands.status);
 // Project management
 program
     .command('init')

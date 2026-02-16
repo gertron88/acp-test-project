@@ -12,6 +12,7 @@ import { taskCommands } from './commands/task.js';
 import { projectCommands } from './commands/project.js';
 import { statusCommand } from './commands/status.js';
 import { githubCommands } from './commands/github.js';
+import { codexCommands } from './commands/codex.js';
 
 const program = new Command();
 
@@ -63,6 +64,15 @@ program
   .addCommand(githubCommands.setup)
   .addCommand(githubCommands.status)
   .addCommand(githubCommands.sync);
+
+// Kimi Code (Codex) integration
+program
+  .command('codex')
+  .alias('kimi-code')
+  .description('Kimi Code (Codex) integration - use your 3x credits')
+  .addCommand(codexCommands.generate)
+  .addCommand(codexCommands.review)
+  .addCommand(codexCommands.status);
 
 // Project management
 program
